@@ -7,10 +7,14 @@ const puppeteer = require('puppeteer');
 app.use(bodyParser.urlencoded({ extended: true }))
 
 const chromeOptions = {
-    headless:false,
+    headless:true,
     defaultViewport: null,
     // slowMo:10
   };
+
+app.get('/', (req, res) => {
+  res.send('wow')
+})
 
 app.get('/:id', async(req, res) => {
     var myid = req.params.id;
